@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>QuakePulse — Privacy Policy</title>
+  <style>
+    body { font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+           max-width: 760px; margin: 0 auto; padding: 24px; line-height: 1.6; color: #1e232a; }
+    h1 { font-size: 1.6rem; } h2 { margin-top: 1.8em; }
+    ul { padding-left: 1.2em; }
+    .muted { color: #556; font-size: 0.9rem; }
+    a { color: #0a6; }
+  </style>
+</head>
+<body>
+
+<h1>QuakePulse — Privacy Policy</h1>
+<p class="muted">Last updated: October 10, 2026</p>
+
+<p>QuakePulse is an earthquake-tracking and seismic-anomaly exploration app.
+This policy explains, in plain language, what data the app uses, what leaves
+your phone, and what never does.</p>
+
+<p><strong>Summary:</strong> all data QuakePulse collects is stored only on
+your phone. There is no account. Your precise location never leaves your
+phone — only a coarse regional area is used to fetch public earthquake
+catalog data.</p>
+
+<h2>What is stored on your device</h2>
+<ul>
+  <li>Earthquake catalog data you sync, grouping results, computed metrics,
+      forecasts, and app preferences are stored in a local application
+      database on your phone (SQLite).</li>
+  <li>There is no user account, no sign-up, and nothing is stored on our
+      servers.</li>
+  <li>Uninstalling the app deletes all of this data permanently.</li>
+</ul>
+
+<h2>Location: what is sent, what is not</h2>
+<ul>
+  <li>The app can use your device location to determine your region. On
+      Android, this is app-usage location: your precise GPS coordinates are
+      read on the device only and are <strong>never transmitted anywhere</strong>.</li>
+  <li>To fetch earthquakes, the app queries public earthquake catalogs —
+      INETER (Nicaragua), EMSC (SeismicPortal), and USGS — and sends them
+      <strong>only a coarse regional bounding box</strong> (an area of about
+      50–250 km around a grid-snapped region center). This reveals roughly
+      what region you are looking at, not where you are.</li>
+  <li>This is the only location-derived data that leaves the phone, it is
+      used solely to make the catalog query work, and it is not retained by
+      us (QuakePulse operates no servers).</li>
+  <li>Any internet request inevitably shares standard technical data such as
+      your IP address with the server you contact. QuakePulse adds no device
+      identifiers or tracking of its own.</li>
+</ul>
+
+<h2>Optional "Explain in plain language" feature</h2>
+<ul>
+  <li>Only runs when you tap the button. It is never triggered automatically.</li>
+  <li>It sends a small set of computed aggregates (e.g. the anomaly score and
+      signal readings, rounded) plus the grid-snapped region identifier and
+      radius to an OpenAI-compatible narration endpoint.</li>
+  <li>By default this is a free AI model served via the Kilo Gateway. You can
+      optionally configure your own endpoint and API key in the app.</li>
+  <li>Your GPS coordinates, your earthquake event history, and any personal
+      data are <strong>not</strong> included in this request.</li>
+  <li>The response is cached on your device so repeating the request for the
+      same numbers does not re-contact the AI service.</li>
+</ul>
+
+<h2>Notifications</h2>
+<p>Alerts (new events, quiet periods, anomaly changes) are generated and
+delivered locally on your device using Android notifications. No push
+infrastructure receives your data.</p>
+
+<h2>What we do not do</h2>
+<ul>
+  <li>No advertising.</li>
+  <li>No analytics or telemetry.</li>
+  <li>No third-party trackers.</li>
+  <li>No selling or sharing of data — there is nothing to sell or share; data
+      processing happens on your phone.</li>
+</ul>
+
+<h2>Data safety (summary for store declarations)</h2>
+<ul>
+  <li><strong>Approximate location — collected:</strong> the coarse regional
+      bounding box described above, used for app functionality only,
+      ephemeral, never shared.</li>
+  <li><strong>No personal data</strong> of any kind is collected.</li>
+  <li>Because nothing is stored server-side, there is no server-side data to
+      request deletion of — delete the app to erase all data.</li>
+</ul>
+
+<h2>Contact</h2>
+<p>Questions or requests: open an issue at
+<a href="https://github.com/tim92109/quakepulse">github.com/tim92109/quakepulse</a>.</p>
+
+</body>
+</html>
